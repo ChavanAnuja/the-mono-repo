@@ -22,7 +22,7 @@ jobs:
           password: ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_PASSWORD}}
 
       - name: Push Image
-        run: docker push -t ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/license-finder:latest 
+        run: docker push ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/license-finder:latest 
 
             
 

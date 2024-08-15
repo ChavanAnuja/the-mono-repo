@@ -1,0 +1,39 @@
+Manifest-Version: 1.0
+Build-Jdk-Spec: 17
+Class-Path: lib/spring-boot-starter-web-3.2.2.jar lib/spring-boot-starte
+ r-3.2.2.jar lib/spring-boot-3.2.2.jar lib/spring-boot-autoconfigure-3.2
+ .2.jar lib/spring-boot-starter-logging-3.2.2.jar lib/logback-classic-1.
+ 4.14.jar lib/logback-core-1.4.14.jar lib/log4j-to-slf4j-2.21.1.jar lib/
+ log4j-api-2.21.1.jar lib/jul-to-slf4j-2.0.11.jar lib/jakarta.annotation
+ -api-2.1.1.jar lib/snakeyaml-2.2.jar lib/spring-boot-starter-json-3.2.2
+ .jar lib/jackson-datatype-jdk8-2.15.3.jar lib/jackson-datatype-jsr310-2
+ .15.3.jar lib/jackson-module-parameter-names-2.15.3.jar lib/spring-boot
+ -starter-tomcat-3.2.2.jar lib/tomcat-embed-core-10.1.18.jar lib/tomcat-
+ embed-websocket-10.1.18.jar lib/spring-web-6.1.3.jar lib/spring-beans-6
+ .1.3.jar lib/micrometer-observation-1.12.2.jar lib/micrometer-commons-1
+ .12.2.jar lib/spring-webmvc-6.1.3.jar lib/spring-aop-6.1.3.jar lib/spri
+ ng-context-6.1.3.jar lib/spring-expression-6.1.3.jar lib/spring-boot-st
+ arter-data-jpa-3.2.2.jar lib/spring-boot-starter-aop-3.2.2.jar lib/aspe
+ ctjweaver-1.9.21.jar lib/spring-boot-starter-jdbc-3.2.2.jar lib/HikariC
+ P-5.0.1.jar lib/spring-jdbc-6.1.3.jar lib/hibernate-core-6.4.1.Final.ja
+ r lib/jakarta.persistence-api-3.1.0.jar lib/jakarta.transaction-api-2.0
+ .1.jar lib/jboss-logging-3.5.3.Final.jar lib/hibernate-commons-annotati
+ ons-6.0.6.Final.jar lib/jandex-3.1.2.jar lib/classmate-1.6.0.jar lib/by
+ te-buddy-1.14.11.jar lib/jaxb-runtime-4.0.4.jar lib/jaxb-core-4.0.4.jar
+  lib/angus-activation-2.0.1.jar lib/txw2-4.0.4.jar lib/istack-commons-r
+ untime-4.1.2.jar lib/jakarta.inject-api-2.0.1.jar lib/antlr4-runtime-4.
+ 13.0.jar lib/spring-data-jpa-3.2.2.jar lib/spring-data-commons-3.2.2.ja
+ r lib/spring-orm-6.1.3.jar lib/spring-tx-6.1.3.jar lib/slf4j-api-2.0.11
+ .jar lib/spring-aspects-6.1.3.jar lib/mysql-connector-j-8.0.33.jar lib/
+ jackson-dataformat-xml-2.15.3.jar lib/jackson-core-2.15.3.jar lib/jacks
+ on-annotations-2.15.3.jar lib/jackson-databind-2.15.3.jar lib/stax2-api
+ -4.2.1.jar lib/woodstox-core-6.5.1.jar lib/spring-boot-starter-validati
+ on-3.2.2.jar lib/tomcat-embed-el-10.1.18.jar lib/hibernate-validator-8.
+ 0.1.Final.jar lib/jakarta.validation-api-3.0.2.jar lib/jakarta.xml.bind
+ -api-4.0.1.jar lib/jakarta.activation-api-2.1.2.jar lib/spring-core-6.1
+ .3.jar lib/spring-jcl-6.1.3.jar
+Implementation-Title: appointment-service-docker-image
+Implementation-Version: 0.0.1-SNAPSHOT
+Main-Class: org.dnyanyog.AppointmentServiceMain
+Created-By: Maven Integration for Eclipse
+

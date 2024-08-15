@@ -1,0 +1,15 @@
+org\dnyanyog\dto\response\UpdateAppointmentData.class
+org\dnyanyog\dto\response\UpdateAppointmentResponse.class
+org\dnyanyog\AppointmentServiceMain.class
+org\dnyanyog\repo\AppointmentRepository.class
+org\dnyanyog\service\AppointmentService.class
+org\dnyanyog\dto\response\DataByPatientId.class
+org\dnyanyog\entity\Appointment.class
+org\dnyanyog\dto\response\DataByPatientIdResponse.class
+org\dnyanyog\controller\AppointmentController.class
+org\dnyanyog\dto\request\UpdateAppointmentRequest.class
+org\dnyanyog\service\AppointmentServiceImpl.class
+org\dnynayog\common\ResponseCodes.class
+org\dnyanyog\dto\response\AppointmentResponse.class
+org\dnyanyog\dto\response\AppointmentData.class
+org\dnyanyog\dto\request\AppointmentRequest.class

@@ -1,0 +1,15 @@
+FROM openjdk:24-jdk-slim
+RUN apt update
+
+RUN apt install -y iputils-ping
+
+WORKDIR /app
+
+COPY /target/patient-service-docker-image-0.0.1-SNAPSHOT.jar /app/patient-service.jar
+
+CMD ["java","-jar","/app/patient-service.jar"]
+
+#docker build -t org.dnyanyog/patient-service -f dockerfile .
+#docker run --name mysql-container --network hospital-management-network -e MYSQL_ROOT_PASSWORD=Anuja@2003 -d mysql:latest
+#docker run --rm -it -e DB_HOST=mysql-container -e DB_NAME=patient_service_db --name patient-service --network hospital-management-network org.dnyanyog/patient-service
+#docker run --rm -it -e DB_HOST=172.20.0.2 -e DB_NAME=patient_service_db --name patient-service --network hospital-management-network org.dnyanyog/patient-service

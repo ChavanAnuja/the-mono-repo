@@ -1,0 +1,20 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+	<changeSet author="Anuja Chavan" id="20240423">
+		<insert schemaName="patient_service_db" tableName="new_patient">
+			<column name="patientId" value="1" />
+			<column name="patientNameMarathi" value="abc" />
+			<column name="patientNameEnglish" value="abc" />
+			<column name="mobileNumber" value="165789" />
+			<column name="gender" value="f" />
+			<column name="address" value="pune" />
+			<column name="birthDate" value="2346-7-8" />
+			<column name="firstExaminationDate" value="7689-6-4" />
+		</insert>
+		
+		
+
+	</changeSet>
+</databaseChangeLog>

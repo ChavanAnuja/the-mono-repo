@@ -19,3 +19,4 @@ ENTRYPOINT ["license_finder"]
 
 
 
+

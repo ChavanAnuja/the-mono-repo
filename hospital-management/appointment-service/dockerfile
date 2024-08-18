@@ -1,4 +1,4 @@
-FROM anujachavan/api-gateway
+FROM anujachavan/openjdk-24-jdk-slim
 
 RUN apt update
 

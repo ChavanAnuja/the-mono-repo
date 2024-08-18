@@ -1,4 +1,4 @@
-FROM anujachavan/patient-service
+FROM anujachavan/api-gateway
 RUN apt update
 
 RUN apt install -y iputils-ping

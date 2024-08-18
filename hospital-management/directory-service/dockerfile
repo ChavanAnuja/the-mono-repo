@@ -1,4 +1,4 @@
-FROM anujachavan/directory-service
+FROM anujachavan/api-gateway
 
 RUN apt update
 

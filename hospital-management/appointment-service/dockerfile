@@ -1,4 +1,4 @@
-FROM anujachavan/appointment-service
+FROM anujachavan/api-gateway
 
 RUN apt update
 

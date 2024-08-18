@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-FROM anujachavan/openjdk-24-jdk-slim
-=======
-+FROM anujachavan/openjdk-24-jdk-slim
->>>>>>> 65fc5cbfeb17188c6f17946273332f8bab909948
+FROM anujachavan/api-gateway
 
 RUN apt update
 

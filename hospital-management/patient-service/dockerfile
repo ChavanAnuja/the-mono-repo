@@ -1,4 +1,4 @@
-FROM openjdk:24-jdk-slim
+FROM anujachavan/patient-service
 RUN apt update
 
 RUN apt install -y iputils-ping

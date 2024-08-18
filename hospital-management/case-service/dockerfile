@@ -1,4 +1,4 @@
-FROM anujachavan/case-service
+FROM anujachavan/api-gateway
 
 RUN apt update
 

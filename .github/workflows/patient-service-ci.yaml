@@ -1,4 +1,4 @@
-name: services-image-build
+name: patient-service-image-build
 
 
 on:

@@ -1,0 +1,28 @@
+name: services-image-build
+
+
+on:
+  push:
+    paths: 
+     - hospital-management/**
+
+jobs:
+  hospital-management-console-image:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build Base Image
+        run: docker build -t ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/hospital-management-console:latest -f dockerfile .
+        working-directory: hospital-management/ hospital-management-console
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+            username: ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}
+            password: ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_PASSWORD}}
+
+      - name: Push Image
+        run: docker push ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/hospital-management-console:latest

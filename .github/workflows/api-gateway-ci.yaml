@@ -4,7 +4,7 @@ name: api-gateway-image-build
 on:
   push:
     paths: 
-     - hospital-management/**
+     - hospital-management/api-gateway
 
 jobs:
   api-gateway-image:

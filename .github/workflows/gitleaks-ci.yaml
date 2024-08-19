@@ -1,4 +1,4 @@
-name: base-image-build
+name: gitleaks-base-image-build
 
 
 on:

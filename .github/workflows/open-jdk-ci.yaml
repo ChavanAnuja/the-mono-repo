@@ -1,4 +1,4 @@
-name: base-image-build
+name: open-jdk-base-image-build
 
 
 on:

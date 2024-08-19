@@ -1,4 +1,4 @@
-name: base-image-build
+name: license-finder-base-image-build
 
 
 on:

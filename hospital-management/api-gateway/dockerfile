@@ -12,3 +12,4 @@ CMD ["java","-jar","/app/api-gateway.jar"]
 
 # docker build -t api-gateway:latest -f dockerfile .
 # docker run -dit -d -p 8080:8080 --name api-gateway --network hospital-management-network  api-gateway:latest
+

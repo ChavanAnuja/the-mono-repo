@@ -1,4 +1,4 @@
-name: services-image-build
+name: console-image-build
 
 
 on:

@@ -1,4 +1,4 @@
-name: services-image-build
+name: directory-service-image-build
 
 
 on:

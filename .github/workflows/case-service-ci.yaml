@@ -1,4 +1,4 @@
-name: services-image-build
+name: case-service-image-build
 
 
 on:

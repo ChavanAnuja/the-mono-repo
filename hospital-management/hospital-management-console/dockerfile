@@ -10,3 +10,4 @@ COPY target/hospital-management-frontend-0.0.1-SNAPSHOT.jar /app/hospital-consol
 # Start the application
 CMD ["java", "-jar","hospital-console.jar"]
 
+

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="655.0" prefWidth="1125.0" stylesheets="@../Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="add_case.AddCaseController">
+   <children>
+      <Pane layoutX="6.0" layoutY="72.0" prefHeight="578.0" prefWidth="218.0" styleClass="pane-1" stylesheets="@Style.css">
+         <children>
+            <Button fx:id="dashboard" alignment="TOP_LEFT" contentDisplay="RIGHT" layoutX="6.0" layoutY="14.0" mnemonicParsing="false" onAction="#dashboard" prefHeight="37.0" prefWidth="206.0" styleClass="button-2" stylesheets="@Style.css" text="Dashboard" textAlignment="JUSTIFY">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="patients" alignment="TOP_LEFT" layoutX="6.0" layoutY="61.0" mnemonicParsing="false" onAction="#patients" prefHeight="40.0" prefWidth="206.0" styleClass="button-2" stylesheets="Style.css" text="Patients" textAlignment="CENTER">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="cases" alignment="TOP_LEFT" layoutX="6.0" layoutY="113.0" mnemonicParsing="false" onAction="#cases" prefHeight="37.0" prefWidth="206.0" styleClass="button-1" stylesheets="@Style.css" text="Cases" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="appointment" alignment="TOP_LEFT" layoutX="6.0" layoutY="168.0" mnemonicParsing="false" onAction="#appointment" prefHeight="37.0" prefWidth="206.0" styleClass="button-2" stylesheets="@Style.css" text="Appointments">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="users" alignment="TOP_LEFT" layoutX="6.0" layoutY="218.0" mnemonicParsing="false" onAction="#users" prefHeight="37.0" prefWidth="206.0" styleClass="button-2" stylesheets="@Style.css" text="Users">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="logout" alignment="TOP_LEFT" layoutX="6.0" layoutY="527.0" mnemonicParsing="false" onAction="#Logout" prefHeight="37.0" prefWidth="206.0" styleClass="button-3" stylesheets="@Style.css" text="Logout">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="-7.0" prefHeight="58.0" prefWidth="1135.0" styleClass="title" stylesheets="@Style.css">
+         <children>
+            <Label fx:id="patientManagement" layoutX="225.0" layoutY="11.0" prefHeight="37.0" prefWidth="226.0" text="Add Case" textFill="#fcf5f5">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="admin" layoutX="970.0" layoutY="16.0" prefHeight="25.0" prefWidth="141.0" text="Anuja(Admin)" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Pane layoutX="38.0" layoutY="4.0" prefHeight="50.0" prefWidth="141.0" styleClass="pane-3" stylesheets="@Style.css" />
+         </children>
+      </Pane>
+      <Pane layoutX="236.0" layoutY="69.0" prefHeight="578.0" prefWidth="878.0" styleClass="pane-2" stylesheets="@Style.css">
+         <children>
+            <TextField fx:id="patientNameEnglish" layoutX="264.0" layoutY="26.0" prefHeight="37.0" prefWidth="485.0" styleClass="textfield-1" stylesheets="@Style.css" />
+            <TextField fx:id="patientId" layoutX="264.0" layoutY="81.0" prefHeight="37.0" prefWidth="485.0" styleClass="textfield-1" stylesheets="@Style.css" />
+            <TextField fx:id="caseNumber" layoutX="264.0" layoutY="138.0" prefHeight="37.0" prefWidth="485.0" styleClass="textfield-1" stylesheets="@Style.css" />
+            <TextArea fx:id="prescription" layoutX="264.0" layoutY="367.0" prefHeight="58.0" prefWidth="485.0" styleClass="textarea" stylesheets="@Style.css" />
+            <DatePicker fx:id="examinationDate" layoutX="264.0" layoutY="193.0" onAction="#examinationDate" prefHeight="37.0" prefWidth="485.0" />
+            <Label layoutX="58.0" layoutY="26.0" prefHeight="37.0" prefWidth="206.0" text="Patient Name (English)">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="58.0" layoutY="81.0" prefHeight="37.0" prefWidth="206.0" text="Patient ID">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="58.0" layoutY="138.0" prefHeight="37.0" prefWidth="206.0" text="Case Number">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="58.0" layoutY="260.0" prefHeight="37.0" prefWidth="206.0" text="Symptoms">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="58.0" layoutY="193.0" prefHeight="37.0" prefWidth="206.0" text="Examination Date">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="58.0" layoutY="367.0" prefHeight="37.0" prefWidth="206.0" text="Prescription">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="cancel" layoutX="291.0" layoutY="484.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="40.0" prefWidth="156.0" styleClass="button-4" stylesheets="@Style.css" text="Cancel">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="save" layoutX="572.0" layoutY="484.0" mnemonicParsing="false" onAction="#Save" prefHeight="40.0" prefWidth="156.0" styleClass="green-button-4" stylesheets="@Style.css" text="Save">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <TextArea fx:id="symptomss" layoutX="264.0" layoutY="260.0" prefHeight="74.0" prefWidth="485.0" styleClass="textarea" stylesheets="@Style.css" />
+            <Label fx:id="message" layoutX="264.0" layoutY="441.0" prefHeight="27.0" prefWidth="485.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

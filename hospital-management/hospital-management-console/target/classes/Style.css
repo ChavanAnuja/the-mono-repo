@@ -1,0 +1,106 @@
+.title{
+    -fx-background-color: #FF7F3E;
+}
+
+.button-1{
+    -fx-background-radius: 20;
+    -fx-background-color:  #f08923;
+}
+
+.button-2
+{
+    -fx-background-radius: 20;
+    -fx-background-color:#e9e7e6;
+}
+
+.button-3
+{
+    -fx-background-radius: 20;
+    -fx-background-color:#ffffff;
+}
+.pane-2{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+}
+.pane-1{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+}
+.anchorpane-1{
+    -fx-background-color: #686D76;
+}
+
+.anchorpane-2{
+    -fx-background-color: #f08923;
+    -fx-background-radius: 0 0 0 0/ 400 0 0 300;
+}
+
+.pane-3{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+}
+
+.pane-4{
+    -fx-background-color: #dcd6d6;
+    -fx-background-radius: 10;
+}
+
+.textfield-1 {
+    -fx-background-radius: 19;
+    -fx-border-radius: 19;
+    -fx-border-width: 1;
+    -fx-border-color: #000000;
+    -fx-cursor: hand; 
+    -fx-text-fill: #000000;
+    -fx-background-color: transparent, white;
+    -fx-background-insets: 0, 1;
+    -fx-font-family: "Calisto MT";
+    -fx-font-size: 16px;
+}
+
+.textfield-1:pressed {
+    -fx-border-radius: 19;
+    -fx-border-color: #f08923;
+    -fx-border-width: 2;
+}
+
+.textfield-1:hover {
+    -fx-background-color: TRANSPARENT;    
+    -fx-background-radius: 19;
+    -fx-border-radius: 19;
+    -fx-border-color: #f08923;
+    -fx-border-width: 2;    
+}
+
+.date-picker {
+    -fx-font-size: 14px;
+   -fx-background-radius: 19 19 19 19; /* Set round edges for the DatePicker */
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+    -fx-border-color: #000000;
+
+}
+.textarea{
+    -fx-border-radius: 8;
+    -fx-border-color: #000000;
+}
+
+.date-picker:hover {
+    -fx-background-color: transparent, white;
+    -fx-background-insets: 0, 2;
+    -fx-border-radius: 19;
+    -fx-border-color: #f08923;
+    -fx-border-width: 2;    
+}
+
+.button-4
+{
+    -fx-background-radius: 20;
+
+}
+.green-button-4
+{
+    -fx-background-radius: 20;
+    -fx-background-color: #A1DD70;
+
+}

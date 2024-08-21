@@ -34,7 +34,7 @@ jobs:
         run: |
           cd hospital-management/directory-service
           docker pull anujachavan/gitleaks
-          docker run -v "$(pwd):/scan" jaii1515/gitleaks
+          docker run -v "$(pwd):/scan" anujachavan/gitleaks
 
       - name: OSS scan
         run: |

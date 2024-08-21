@@ -13,3 +13,5 @@ CMD ["java","-jar","case-service.jar"]
 #docker run --rm -it -e DB_HOST=172.20.0.2 -e DB_NAME=case_service_db --name case-service --network hospital-management-network org.dnyanyog/case-service
 
 
+
+

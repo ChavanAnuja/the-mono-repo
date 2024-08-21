@@ -4,7 +4,7 @@ name: patient-service-image-build
 on:
   push:
     paths: 
-     - hospital-management/**
+     - hospital-management/patient-service/**
 
 jobs:
   patient-service-image:
@@ -14,10 +14,52 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Build Base Image
-        run: docker build -t ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/patient-service:latest -f dockerfile .
-        working-directory: hospital-management/patient-service
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
 
+      - name: Perform google formatter check
+        run: |
+          cd hospital-management/patient-service
+          mvn com.spotify.fmt:fmt-maven-plugin:format
+
+      - name: Remove target directory
+        run: |
+          cd hospital-management/patient-service
+          rm -rf target
+
+      - name: GitLeaks Scan
+        run: |
+          cd hospital-management/patient-service
+          docker pull anujacahavn/gitleaks
+          docker run -v "$(pwd):/scan" anujachavan/gitleaks
+
+      - name: OSS scan
+        run: |
+          cd hospital-management/patient-service
+          mvn ossindex:audit
+        continue-on-error: true
+
+      - name: OWASP Scan
+        if: false
+        run: |
+          cd hospital-management/patient-service
+          mvn org.owasp:dependency-check-maven:check
+          
+      - name: Build Base Image
+        run: |
+          cd hospital-management/patient-service
+          mvn clean install docker:build -Dimage.registry=${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER }} -Dimage.tag=${{ github.ref_name }}
+
+      - name: License finder image
+        run: |
+          cd hospital-management/patient-service
+          docker pull anujachavan/license-finder
+          docker run -v "$(pwd):/scan" anujachavan/license-finder
+        continue-on-error: true
+        
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
@@ -25,4 +67,4 @@ jobs:
             password: ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_PASSWORD}}
 
       - name: Push Image
-        run: docker push ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/patient-service:latest    
+        run: docker push ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/patient-service:${{ github.ref_name }}   

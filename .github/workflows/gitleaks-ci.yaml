@@ -4,7 +4,7 @@ name: gitleaks-base-image-build
 on:
   push:
     paths: 
-     - dev-sec-ops/base-images/gitleaks
+     - dev-sec-ops/base-images/gitleaks/**
 
 
 jobs:

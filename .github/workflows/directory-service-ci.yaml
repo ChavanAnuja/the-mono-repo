@@ -20,44 +20,50 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Set Current Folder Name
+        run: |
+          CURRENT_FOLDER_NAME=$(basename $(pwd)/Hospital-Management/directory-service)
+          echo "Current folder name: $CURRENT_FOLDER_NAME"
+          echo "CURRENT_FOLDER_NAME=$CURRENT_FOLDER_NAME" >> $GITHUB_ENV
+        
       - name: Perform google formatter check
         run: |
-          cd hospital-management/directory-service
+          cd hospital-management/${{ env.CURRENT_FOLDER_NAME }}
           mvn com.spotify.fmt:fmt-maven-plugin:check
 
       - name: Remove target directory
         run: |
-          cd hospital-management/directory-service
+          cd hospital-management/${{ env.CURRENT_FOLDER_NAME }}
           rm -rf target
 
       - name: GitLeaks Scan
         run: |
-          cd hospital-management/directory-service
-          docker pull anujachavan/gitleaks
-          docker run -v "$(pwd):/scan" anujachavan/gitleaks
+          cd hospital-management/${{ env.CURRENT_FOLDER_NAME }}
+          docker pull ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/gitleaks:latest
+          docker run -v "$(pwd):/scan" ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/gitleaks:latest
 
       - name: OSS scan
         run: |
-          cd hospital-management/directory-service
+          cd hospital-management/${{ env.CURRENT_FOLDER_NAME }}
           mvn ossindex:audit
         continue-on-error: true
 
       - name: OWASP Scan
         if: false
         run: |
-          cd hospital-management/directory-service
+          cd hospital-management/${{ env.CURRENT_FOLDER_NAME }}
           mvn org.owasp:dependency-check-maven:check
 
       - name: License finder image
         run: |
-          cd hospital-management/directory-service
-          docker pull anujachavan/license-finder
-          docker run -v "$(pwd):/scan" anujachavan/license-finder
+          cd hospital-management/${{ env.CURRENT_FOLDER_NAME }}
+          docker pull ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/license-finder:latest
+          docker run -v "$(pwd):/scan" ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/license-finder:latest
         continue-on-error: true
 
       - name: Build Base Image
         run: |
-          cd hospital-management/directory-service
+          cd hospital-management/${{ env.CURRENT_FOLDER_NAME }}
           mvn clean install docker:build -Dimage.registry=${{ secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}} -Dimage.tag=${{ github.ref_name }}
 
       - name: Login to Docker Hub
@@ -67,4 +73,4 @@ jobs:
             password: ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_PASSWORD}}
 
       - name: Push Image
-        run: docker push ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/directory-service:${{ github.ref_name }}
+        run: docker push ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/${{ env.CURRENT_FOLDER_NAME }}:${{ github.ref_name }}

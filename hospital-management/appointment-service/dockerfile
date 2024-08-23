@@ -12,5 +12,3 @@ CMD ["java","-jar","/app/appointment-service.jar"]
 
 
 
-
-

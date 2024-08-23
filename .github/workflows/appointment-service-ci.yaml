@@ -44,7 +44,7 @@ jobs:
 
       - name: OSS scan
         run: |
-          cd hospital-management/${{ env.CURRENT_FOLDER_NAME }
+          cd hospital-management/${{ env.CURRENT_FOLDER_NAME }}
           mvn ossindex:audit
         continue-on-error: true
 

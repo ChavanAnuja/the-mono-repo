@@ -74,4 +74,4 @@ jobs:
             password: ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_PASSWORD}}
 
       - name: Push Image
-        run: docker push ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/$CURRENT_FOLDER_NAME:${{ github.ref_name }}
+        run: docker push ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/${{ env.CURRENT_FOLDER_NAME }}:${{ github.ref_name }}

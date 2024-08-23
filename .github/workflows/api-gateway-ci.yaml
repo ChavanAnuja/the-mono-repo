@@ -71,4 +71,4 @@ jobs:
 
       - name: Push Image
         run: |
-          docker push ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/${{CURRENT_FOLDER_NAME}}:${{ github.ref_name}}
+          docker push ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/$CURRENT_FOLDER_NAME:${{ github.ref_name}}

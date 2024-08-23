@@ -64,7 +64,7 @@ jobs:
       - name: Build Base Image
         run: |
           cd hospital-management/${{ env.CURRENT_FOLDER_NAME }
-          mvn clean install docker:build -Dimage.registry=${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}} -Dimage.tag=${{ github.ref_name}}
+          mvn install docker:build -Dimage.registry=${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}} -Dimage.tag=${{ github.ref_name}}
         
 
       - name: Login to Docker Hub

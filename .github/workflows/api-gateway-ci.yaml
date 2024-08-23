@@ -22,7 +22,7 @@ jobs:
 
       - name: Set Current Folder Name
         run: |
-          CURRENT_FOLDER_NAME=$(basename $(pwd)/Hospital-Management/api-gateway)
+          CURRENT_FOLDER_NAME=$(basename $(pwd)/hospital-management/api-gateway)
           echo "Current folder name: $CURRENT_FOLDER_NAME"
           echo "CURRENT_FOLDER_NAME=$CURRENT_FOLDER_NAME" >> $GITHUB_ENV
 
@@ -36,7 +36,7 @@ jobs:
         run: |
           cd hospital-management/api-gateway
           mvn com.spotify.fmt:fmt-maven-plugin:check
-        working-directory: Hospital-Management/${{ env.CURRENT_FOLDER_NAME }}   
+      
 
       - name: OSS Scan
         run: mvn ossindex:audit

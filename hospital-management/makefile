@@ -16,17 +16,16 @@ clone:
     @git clone $(REPO) $(LIBRARY)
 
 
-status: 
-    @echo "Checking status of each project"
-    @for project in $(SERVICES) $(LIB); do \
-             echo " Status of Project-"; \
-             (cd $$project && git status); \
-    done
+status:
+	@echo "Checking status of each project"
+	@for project in $(SERVICES) $(LIB); do \
+		echo "Status of Project - $$project"; \
+		(cd $$project && git status); \
+	done
 
-pull:
-    @echo "Fetching latest Changes"
-    @for project in #(SERVICES) $(LIB); do \
-         echo "Fetching updates for $$project" \
-         (cd $$project && git pull); \
-    done
+git_pull:
+	@echo "Pulling latest changes for all projects..."
+	@for dir in $(SERVICES)/* $(LIB); do \
+		[ -d $$dir/.git ] && (cd $$dir && echo "Pulling in $$dir:" && git pull); \
+	done
 

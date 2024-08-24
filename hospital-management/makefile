@@ -36,3 +36,29 @@ stash:
 		echo "Stashing changes for $$project"; \
 		(cd $$project && git stash); \
 	done
+
+build_lib:
+	@echo "Compiling the project"
+	@(cd $(LIB) && mvn clean install)
+
+
+build_services:
+	@echo "Building all service projects"
+	@for service in $(SERVICES); do \
+		echo "Building $$service..."; \
+		(cd $$service && mvn clean install); \
+	done
+
+build_images:
+	@echo "Creating Docker images"
+	@for service in $(SERVICES); do \
+		echo "Building Docker image for $$service"; \
+		(cd $$service && docker build -t $(DOCKER_USERNAME)/$$service:latest .); \
+	done
+
+push_images:
+	@echo "Pushing Docker images"
+	@for service in $(SERVICES); do \
+		echo "Pushing Docker image for $$service"; \
+		docker push $(DOCKER_USERNAME)/$$service:latest; \
+	done

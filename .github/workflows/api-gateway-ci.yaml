@@ -7,7 +7,7 @@ on:
      - hospital-management/api-gateway/**
 
 jobs:
-  pre-commit-scans:
+  api-gateway-image:
     runs-on: ubuntu-latest
     
     steps:

@@ -31,3 +31,16 @@ jobs:
       - name: Display Makefile
         run: cat makefile
         working-directory: hospital-management
+
+      - name: Show Git status
+        run: make status
+        working-directory: hospital-management
+
+      - name: Update Repositories
+        run: make pull
+        working-directory: hospital-management
+
+      - name: Save Local Modification
+        run: make stash
+        working-directory: hospital-management
+        

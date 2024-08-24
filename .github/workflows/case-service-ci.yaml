@@ -26,20 +26,15 @@ jobs:
           echo "CURRENT_FOLDER_NAME=$CURRENT_FOLDER_NAME" >> $GITHUB_ENV
         
       - name: Perform google formatter check
-        run: |
-          cd hospital-management/${{ env.CURRENT_FOLDER_NAME }}
-          mvn com.spotify.fmt:fmt-maven-plugin:format
+        run: mvn com.spotify.fmt:fmt-maven-plugin:format
+        working-directory: hospital-management/${{ env.CURRENT_FOLDER_NAME }}
 
-      - name: Remove target directory
-        run: |
-          cd hospital-management/${{ env.CURRENT_FOLDER_NAME }}
-          rm -rf target
 
       - name: GitLeaks Scan
         run: |
           cd hospital-management/${{ env.CURRENT_FOLDER_NAME }}
           docker pull ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/gitleaks
-          docker run -v "$(pwd):/scan" ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/gitleaks
+          docker run -v $(pwd):/path ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/gitleaks
 
       - name: OSS scan
         run: |

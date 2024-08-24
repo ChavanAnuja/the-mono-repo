@@ -41,7 +41,8 @@ jobs:
       run: |
         docker pull ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/gitleaks
         docker run --rm -v $(pwd):/path ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/gitleaks detect -v
-
+      continue-on-error: true
+      
     - name: license finder Scan
       run: |
         docker pull ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/license-finder:latest

@@ -7,74 +7,59 @@ on:
      - hospital-management/api-gateway/**
 
 jobs:
-  api-gateway-image:
+  pre-commit-scans:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin' 
+        java-version: '21'
 
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '17'
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-      - name: Set Current Folder Name
-        run: |
-          CURRENT_FOLDER_NAME=$(basename $(pwd)/hospital-management/api-gateway)
-          echo "Current folder name: $CURRENT_FOLDER_NAME"
-          echo "CURRENT_FOLDER_NAME=$CURRENT_FOLDER_NAME" >> $GITHUB_ENV
+    - name: Set Current Folder Name
+      run: |
+        CURRENT_FOLDER_NAME=$(basename $(pwd)/hospital-management/api-gateway)
+        echo "Current folder name: $CURRENT_FOLDER_NAME"
+        echo "CURRENT_FOLDER_NAME=$CURRENT_FOLDER_NAME" >> $GITHUB_ENV
 
-      - name: GitLeaks Scan
-        run: |
-          cd hospital-management/api-gateway
-          docker pull ${{ secrets.HOSPITAL_MANAGEMNT_REGISTRY_USERNAME }}/gitleaks
-          docker run --rm -v "$(pwd):/path" ${{ secrets.HOSPITAL_MANAGEMNT_REGISTRY_USERNAME }}/gitleaks:latest
+    - name: Perform Google Formatter check
+      run: mvn com.spotify.fmt:fmt-maven-plugin:format
+      working-directory: hospital-management/${{ env.CURRENT_FOLDER_NAME }}
 
-      - name: Perform google formatter check
-        run: |
-          cd hospital-management/api-gateway
-          mvn com.spotify.fmt:fmt-maven-plugin:format
-      
+    - name: GitLeaks Scan
+      run: |
+        docker pull ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/gitleaks:latest
+        docker run --rm -v $(pwd):/path ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/gitleaks:latest detect -v
 
-      - name: OSS Scan
-        run: mvn ossindex:audit
-        working-directory: Hospital-Management/${{ env.CURRENT_FOLDER_NAME }}
-        continue-on-error: true
-      
-      - name: OWASP Scan
-        if: false
-        run: |
-          cd hospital-management/api-gateway
-          mvn org.owasp:dependency-check-maven:check
-          working-directory: Hospital-Management/${{ env.CURRENT_FOLDER_NAME }}
+    - name: license finder Scan
+      run: |
+        docker pull ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/license-finder:latest
+        docker run --rm -v $(pwd):/scan ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/license-finder:latest
+        
+    - name: OSS Scan
+      run: mvn ossindex:audit
+      working-directory: hospital-management/${{ env.CURRENT_FOLDER_NAME }}
+      continue-on-error: true
 
-      - name: License finder
-        run: |
-          cd hospital-management/api-gateway
-          docker pull ${{ secrets.HOSPITAL_MANAGEMNT_REGISTRY_USERNAME }}/license-finder:latest
-          docker run --rm -v "$(pwd):/scan" ${{ secrets.HOSPITAL_MANAGEMNT_REGISTRY_USERNAME }}/license-finder:latest
-        continue-on-error: true
+    - name: OWASP Scan
+      if: false
+      run: mvn org.owasp:dependency-check-maven:check
+      working-directory: hospital-management/${{ env.CURRENT_FOLDER_NAME }}
 
-      - name: Build Base Image
-        run: |
-          cd hospital-management/${{ env.CURRENT_FOLDER_NAME }}
-          mvn install docker:build \
-          -Dimage.registry=${{ secrets.HOSPITAL_MANAGEMNT_REGISTRY_USERNAME }} \
-          -Dimage.tag=${{ github.ref_name }}
-        env:
-          CURRENT_FOLDER_NAME: ${{ env.CURRENT_FOLDER_NAME }}
+    - name: Build code and create Docker images
+      run: mvn clean install docker:build -Dimage.registry=${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}} -Dimage.tag=$GITHUB_REF_NAME
+      working-directory: hospital-management/${{ env.CURRENT_FOLDER_NAME }}
 
-      - name: List Docker Images
-        run: docker images
+    - name: Log in to GitHub Docker Registry
+      uses: docker/login-action@v2
+      with:
+        username: ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}
+        password: ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_PASSWORD}}
 
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.HOSPITAL_MANAGEMNT_REGISTRY_USERNAME }}
-          password: ${{ secrets.HOSPITAL_MANAGEMNT_REGISTRY_PASSWORD }}
-
-      - name: Push Image
-        run: |
-          docker push ${{ secrets.HOSPITAL_MANAGEMNT_REGISTRY_USERNAME }}/${{ env.CURRENT_FOLDER_NAME }}:${{ github.ref_name }}
+    - name: Push Docker images
+      run: |
+        docker push ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/$CURRENT_FOLDER_NAME:$GITHUB_REF_NAME

@@ -1,5 +1,5 @@
 
-name: CI Pipeline for Hospital project
+name: CI Pipeline for Hospital Management project
 
 on:
   push:

@@ -70,3 +70,6 @@ jobs:
       with:
         username: ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USERNAME}}
         password: ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_PASSWORD}}
+
+    - name: Push Image
+      run: docker push anujachavan/${{ env.CURRENT_FOLDER_NAME }}:${{GITHUB_REF_NAME}}

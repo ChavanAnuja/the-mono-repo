@@ -29,5 +29,5 @@ jobs:
         working-directory: hospital-management
 
       - name: Display Makefile
-        run: cat Makefile
+        run: cat makefile
         working-directory: hospital-management

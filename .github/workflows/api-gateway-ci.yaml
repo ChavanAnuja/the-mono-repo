@@ -32,8 +32,8 @@ jobs:
 
     - name: GitLeaks Scan
       run: |
-        docker pull ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/gitleaks:latest
-        docker run --rm -v $(pwd):/path ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/gitleaks:latest detect -v
+        docker pull ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/gitleaks
+        docker run --rm -v $(pwd):/path ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/gitleaks detect -v
 
     - name: license finder Scan
       run: |

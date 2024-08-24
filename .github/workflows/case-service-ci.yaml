@@ -1,6 +1,5 @@
 name: case-service-image-build
 
-
 on:
   push:
     paths: 

@@ -22,3 +22,11 @@ status:
              echo " Status of Project-"; \
              (cd $$project && git status); \
     done
+
+pull:
+    @echo "Fetching latest Changes"
+    @for project in #(SERVICES) $(LIB); do \
+         echo "Fetching updates for $$project" \
+         (cd $$project && git pull); \
+    done
+

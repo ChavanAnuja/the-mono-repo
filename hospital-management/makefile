@@ -19,6 +19,6 @@ clone:
 status: 
      @echo "Checking status of each project"
      @for project in $(SERVICES) $(LIB); do \
-        echo " Status of Project-"; \
-        (cd $$project && git status); \
+             echo " Status of Project-"; \
+             (cd $$project && git status); \
      done

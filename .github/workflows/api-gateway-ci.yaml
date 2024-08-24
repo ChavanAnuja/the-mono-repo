@@ -30,6 +30,13 @@ jobs:
       run: mvn com.spotify.fmt:fmt-maven-plugin:format
       working-directory: hospital-management/${{ env.CURRENT_FOLDER_NAME }}
 
+    - name: Login to Docker Registry
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER }}
+        password: ${{ secrets.HOSPITAL_MANAGEMNT_REGISTRY_PASSWORD }}
+
+
     - name: GitLeaks Scan
       run: |
         docker pull ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/gitleaks

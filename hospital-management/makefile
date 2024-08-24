@@ -29,3 +29,10 @@ pull:
 		echo "Pulling updates for $$project"; \
 		(cd $$project && git pull); \
 	done
+
+stash:
+	@echo "Stashing local changes"
+	@for project in $(SERVICES) $(LIB); do \
+		echo "Stashing changes for $$project"; \
+		(cd $$project && git stash); \
+	done

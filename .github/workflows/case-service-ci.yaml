@@ -38,8 +38,8 @@ jobs:
       - name: GitLeaks Scan
         run: |
           cd hospital-management/${{ env.CURRENT_FOLDER_NAME }}
-          docker pull ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/gitleaks:latest
-          docker run -v "$(pwd):/scan" ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/gitleaks:latest
+          docker pull ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/gitleaks
+          docker run -v "$(pwd):/scan" ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/gitleaks
 
       - name: OSS scan
         run: |
@@ -62,8 +62,8 @@ jobs:
       - name: License finder image
         run: |
           cd hospital-management/${{ env.CURRENT_FOLDER_NAME }}
-          docker pull ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/license-finder:latest
-          docker run -v "$(pwd):/scan" ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/license-finder:latest
+          docker pull ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/license-finder
+          docker run -v "$(pwd):/scan" ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/license-finder
         continue-on-error: true
         
       - name: Login to Docker Hub

@@ -9,3 +9,4 @@ CMD ["java","-jar","/app/appointment-service.jar"]
 # docker build -t appointment-service:latest -f dockerfile .
 # docker run -it --rm --name appointment-service --network hospital-management  appointment-service:latest
 # docker run --rm -it -e DB_HOST=172.20.0.2/16 -e DB_NAME=appointment_service_db --name appointment-service --network hospital-management-network org.dnyanyog/appointment-service
+

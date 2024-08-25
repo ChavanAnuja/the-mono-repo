@@ -25,11 +25,6 @@ jobs:
           echo "Current folder name: $CURRENT_FOLDER_NAME"
           echo "CURRENT_FOLDER_NAME=$CURRENT_FOLDER_NAME" >> $GITHUB_ENV
 
-      - name: Ensure target directory exists
-        run: |
-          mkdir -p hospital-management/appointment-service/target/classes
-          chmod -R 777 hospital-management/appointment-service/target
-
       - name: Perform google formatter check
         run: |
           cd hospital-management/${{ env.CURRENT_FOLDER_NAME }}
@@ -37,7 +32,7 @@ jobs:
 
       - name: Remove target directory
         run: |
-          cd hospital-management/appointment-service
+          cd hospital-management/${{ env.CURRENT_FOLDER_NAME }}
           rm -rf target
 
       - name: GitLeaks Scan
@@ -68,7 +63,7 @@ jobs:
       - name: Build Base Image
         run: |
           cd hospital-management/${{ env.CURRENT_FOLDER_NAME }}
-          mvn install docker:build -Dimage.registry=${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}} -Dimage.tag=${{ github.ref_name}}
+          mvn install docker:build -Dimage.registry=${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}} -Dimage.tag=$GITHUB_REF_NAME
 
       - name: Login to Docker Hub
         uses: docker/login-action@v3
@@ -77,4 +72,4 @@ jobs:
             password: ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_PASSWORD}}
 
       - name: Push Image
-        run: docker push anujachavan/${{ env.CURRENT_FOLDER_NAME }}:${{ github.ref_name }}
+        run: docker push anujachavan/${{ env.CURRENT_FOLDER_NAME }}:$GITHUB_REF_NAME

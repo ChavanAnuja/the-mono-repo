@@ -6,7 +6,7 @@ RUN apt install -y iputils-ping
 
 WORKDIR /app
 
-COPY /target/patient-service-docker-image-0.0.1-SNAPSHOT.jar /app/patient-service.jar
+COPY /target/patient-service-0.0.1-SNAPSHOT.jar /app/patient-service.jar
 
 CMD ["java","-jar","/app/patient-service.jar"]
 

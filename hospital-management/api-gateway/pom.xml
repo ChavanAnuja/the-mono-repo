@@ -102,9 +102,7 @@
 						</image>
 					</images>
 				</configuration>
-			</plugin>
-
-			
+			</plugin>		
 		</plugins>
 	</build>
 </project>

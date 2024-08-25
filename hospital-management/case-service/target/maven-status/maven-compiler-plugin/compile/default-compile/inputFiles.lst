@@ -1,10 +1,10 @@
-C:\DevSecOps\case-service-new\src\main\java\org\dnyanyog\dto\request\CaseRequest.java
-C:\DevSecOps\case-service-new\src\main\java\org\dnyanyog\CaseServiceMain.java
-C:\DevSecOps\case-service-new\src\main\java\org\dnyanyog\common\ResponseCodes.java
-C:\DevSecOps\case-service-new\src\main\java\org\dnyanyog\dto\response\CasesData.java
-C:\DevSecOps\case-service-new\src\main\java\org\dnyanyog\entity\Cases.java
-C:\DevSecOps\case-service-new\src\main\java\org\dnyanyog\service\CasesServiceImpl.java
-C:\DevSecOps\case-service-new\src\main\java\org\dnyanyog\dto\response\CasesResponse.java
-C:\DevSecOps\case-service-new\src\main\java\org\dnyanyog\repo\CasesRepository.java
-C:\DevSecOps\case-service-new\src\main\java\org\dnyanyog\controller\CasesController.java
-C:\DevSecOps\case-service-new\src\main\java\org\dnyanyog\service\CasesService.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\case-service\src\main\java\org\dnyanyog\CaseServiceMain.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\case-service\src\main\java\org\dnyanyog\common\ResponseCodes.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\case-service\src\main\java\org\dnyanyog\controller\CasesController.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\case-service\src\main\java\org\dnyanyog\dto\request\CaseRequest.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\case-service\src\main\java\org\dnyanyog\repo\CasesRepository.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\case-service\src\main\java\org\dnyanyog\dto\response\CasesData.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\case-service\src\main\java\org\dnyanyog\service\CasesServiceImpl.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\case-service\src\main\java\org\dnyanyog\entity\Cases.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\case-service\src\main\java\org\dnyanyog\service\CasesService.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\case-service\src\main\java\org\dnyanyog\dto\response\CasesResponse.java

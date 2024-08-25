@@ -60,12 +60,6 @@ jobs:
           docker run -v "$(pwd):/scan" ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/license-finder:latest
         continue-on-error: true
 
-      - name: Check Directory Permissions
-        run: chmod -R 777 hospital-management/appointment-service
-
-      - name: Build Project
-        run: mvn clean install
-        working-directory: hospital-management/appointment-service
 
       - name: Build Base Image
         run: |

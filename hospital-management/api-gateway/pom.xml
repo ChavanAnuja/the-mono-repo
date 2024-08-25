@@ -41,6 +41,11 @@
 				</configuration>
 			</plugin>
 			<plugin>
+    <groupId>org.sonarsource.scanner.maven</groupId>
+    <artifactId>sonar-maven-plugin</artifactId>
+    <version>4.0.0.4121</version>
+</plugin>
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<executions>
@@ -91,7 +96,7 @@
 							<build>
 								<dockerFile>${project.basedir}/dockerfile</dockerFile>
 								<args>
-									<imageName>${project.artifactId}-latest</imageName>
+									<imageName>${project.artifactId}-${image.tag}</imageName>
 								</args>
 							</build>
 						</image>
@@ -102,5 +107,4 @@
 			
 		</plugins>
 	</build>
-
 </project>

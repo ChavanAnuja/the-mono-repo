@@ -1,6 +1,5 @@
 name: case-service-image-build
 
-
 on:
   push:
     paths: 
@@ -27,20 +26,15 @@ jobs:
           echo "CURRENT_FOLDER_NAME=$CURRENT_FOLDER_NAME" >> $GITHUB_ENV
         
       - name: Perform google formatter check
-        run: |
-          cd hospital-management/${{ env.CURRENT_FOLDER_NAME }}
-          mvn com.spotify.fmt:fmt-maven-plugin:format
+        run: mvn com.spotify.fmt:fmt-maven-plugin:format
+        working-directory: hospital-management/${{ env.CURRENT_FOLDER_NAME }}
 
-      - name: Remove target directory
-        run: |
-          cd hospital-management/${{ env.CURRENT_FOLDER_NAME }}
-          rm -rf target
 
       - name: GitLeaks Scan
         run: |
           cd hospital-management/${{ env.CURRENT_FOLDER_NAME }}
-          docker pull ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/gitleaks:latest
-          docker run -v "$(pwd):/scan" ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/gitleaks:latest
+          docker pull ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/gitleaks
+          docker run -v $(pwd):/path ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/gitleaks
 
       - name: OSS scan
         run: |
@@ -63,8 +57,8 @@ jobs:
       - name: License finder image
         run: |
           cd hospital-management/${{ env.CURRENT_FOLDER_NAME }}
-          docker pull ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/license-finder:latest
-          docker run -v "$(pwd):/scan" ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/license-finder:latest
+          docker pull ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/license-finder
+          docker run -v "$(pwd):/scan" ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/license-finder
         continue-on-error: true
         
       - name: Login to Docker Hub
@@ -74,4 +68,4 @@ jobs:
             password: ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_PASSWORD}}
 
       - name: Push Image
-        run: docker push ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}:${{ github.ref_name }}
+        run: docker push ${{secrets.HOSPITAL_MANAGEMNT_REGISTRY_USER}}/${{ env.CURRENT_FOLDER_NAME }}:${{ github.ref_name }}

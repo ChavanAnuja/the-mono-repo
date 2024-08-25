@@ -1,38 +1,38 @@
-C:\DevSecOps\hospital-management-frontend\src\main\java\update_patient\UpdatePatient.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\add_user\AddUser.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\appointment_management\AppointmentManagementController.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\add_appointment\AddAppointmentController.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\patient_management\PatientManagement.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\delete_case\DeleteCaseController.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\login\LoginController.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\update_case\UpdateCase.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\delete_patient\DeletePatientController.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\add_patient\AddPatientController.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\update_appointment\UpdateAppointmentController.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\dashboard\DashboardController.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\dashboard\Dashboard.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\delete_patient\DeletePatient.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\add_patient\AddPatient.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\appointment_management\AppointmentManagement.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\add_user\AddUserController.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\login\Login.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\update_appointment\UpdateAppointment.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\add_appointment\AddAppointment.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\patient_management\PatientManagementController.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\user_management\UserManagementController.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\common\ApiEndPoints.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\delete_case\DeleteCase.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\update_patient\UpdatePatientController.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\add_case\AddCaseController.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\application\ApplicationMain.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\common\RestUtilGenerics.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\delete_appointment\DeleteAppointment.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\delete_appointment\DeleteAppointmentController.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\update_case\UpdateCaseController.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\stage_master\StageMaster.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\user_management\UserManagement.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\add_case\AddCase.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\case_management\CaseManagement.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\case_management\CaseManagementController.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\common_screen\ScreenCommon.java
-C:\DevSecOps\hospital-management-frontend\src\main\java\common\Style.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\dashboard\DashboardController.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\user_management\UserManagement.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\update_appointment\UpdateAppointmentController.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\add_case\AddCaseController.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\update_case\UpdateCase.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\add_appointment\AddAppointmentController.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\application\ApplicationMain.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\case_management\CaseManagement.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\login\Login.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\add_patient\AddPatientController.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\appointment_management\AppointmentManagementController.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\add_user\AddUserController.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\add_user\AddUser.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\patient_management\PatientManagement.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\delete_appointment\DeleteAppointment.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\add_appointment\AddAppointment.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\add_case\AddCase.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\update_case\UpdateCaseController.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\delete_case\DeleteCaseController.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\case_management\CaseManagementController.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\delete_patient\DeletePatient.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\delete_patient\DeletePatientController.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\delete_appointment\DeleteAppointmentController.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\common\ApiEndPoints.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\update_patient\UpdatePatientController.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\appointment_management\AppointmentManagement.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\common_screen\ScreenCommon.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\login\LoginController.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\common\RestUtilGenerics.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\common\Style.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\delete_case\DeleteCase.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\user_management\UserManagementController.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\update_patient\UpdatePatient.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\dashboard\Dashboard.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\stage_master\StageMaster.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\add_patient\AddPatient.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\update_appointment\UpdateAppointment.java
+C:\Git Uploaded Projects\the-mono-repo\hospital-management\hospital-management-console\src\main\java\patient_management\PatientManagementController.java

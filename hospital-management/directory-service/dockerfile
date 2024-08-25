@@ -12,4 +12,3 @@ CMD ["java","-jar","/app/directory-service.jar"]
 
 # docker run -d -it -e DB_HOST=172.20.0.2 -e DB_NAME=directory_service_db --name directory-service --network hospital-management-network org.dnyanyog/directory-service  
 
-

@@ -96,7 +96,7 @@
 							<build>
 								<dockerFile>${project.basedir}/dockerfile</dockerFile>
 								<args>
-									<imageName>${project.artifactId}-latest</imageName>
+									<imageName>${project.artifactId}-${image.tag}</imageName>
 								</args>
 							</build>
 						</image>
